@@ -1,1 +1,19 @@
+import aima.utils
+import aima.logic
 
+clauses = []
+ clauses.append(aima.utils.expr("(woman( jia) & man(john) & healthy(jia) & healthy( john) & wealthy(john) & wealthy & healthy ) ==> traveller(x)")) 
+ clauses.append(aima.utils.expr("wealthy(john),healthy(john))
+ clauses.append(aima.utils.expr("healthy(jia)")
+ clauses.append(aima.utils.expr("traveller(john)")
+ clauses.append(aima.utils.expr("(travel (healthy & wealthy)) ==> travel (john)
+KB = FolKB(clauses)
+wealthy = fol_bc_ask(KB, expr("Wealthy(x)"))
+healthy = fol_bc_ask(KB, expr("Healthy(x)"))
+traveler = fol_bc_ask(KB, expr("Traveler(x)"))
+print('Who are healthy ?')
+print(list(healthy), '\n')
+print('Who are wealthy ?')
+print(list(wealthy), '\n')
+print('Who can travel ?')
+print(list(traveler))
