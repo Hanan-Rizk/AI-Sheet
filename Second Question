@@ -1,1 +1,36 @@
+from utils import *
+from logic2 import *
 
+#reads(Maria,logic_programming_book):-author(peter_lucas)
+maria = Symbol("maria")
+peter_lucas = Symbol("peter lucas")
+read = Symbol(f" read ({maria}, logic programming book)")
+by = Symbol(f"by ({peter_lucas})")
+knowledge_for_question1 = And(Implication(read, by))
+print(knowledge_for_question1.formula())
+
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+#likes(Anyone,shopping)
+girl = Symbol("girl(x)")
+shopping = Symbol("shpopping")
+like = Symbol(f"like(x, {shopping} )")
+knowledge_for_question2 = And(Implication(girl, like))
+print(knowledge_for_question2.formula())
+
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+#?-likes (X,shopping)
+who = Symbol("?")
+knowledge_for_question3  = And(who ,like)
+print(knowledge_for_question3.formula())
+
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+#hate(kirke):-city(big,crowdy)
+city = Symbol("city(x, big, crowdy)")
+hates = Symbol("kirke, x")
+knowledge_for_question4 = And(Implication(city, hates))
+print(knowledge_for_question4.formula())
+
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
